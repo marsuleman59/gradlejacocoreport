@@ -13,12 +13,19 @@ repositories {
 }
 
 dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
-test {
+
+test{
 	useJUnitPlatform()
+	afterTest { desc, result ->
+		def output = "Class name: ${desc.className}, Test name: ${desc.name},  (Test status: ${result.resultType})"
+		println( '\n' + output)
+	}
 }
