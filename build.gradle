@@ -21,7 +21,8 @@ dependencies {
 	}
 }
 
-
+//Added Junit test features
+//Commit 3
 test{
 	useJUnitPlatform()
 	afterTest { desc, result ->
