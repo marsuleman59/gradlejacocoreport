@@ -26,6 +26,10 @@ dependencies {
 //Commit 4
 test{
 	useJUnitPlatform()
+	
+	//The below runs after every test is done running
+	//comment new branch
+	//Another commit
 	afterTest { desc, result ->
 		def output = "Class name: ${desc.className}, Test name: ${desc.name},  (Test status: ${result.resultType})"
 		println( '\n' + output)
